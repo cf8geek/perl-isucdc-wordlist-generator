@@ -29,11 +29,11 @@ our @combined_set; # array to hold the combined sets (consonant, vowel, consonan
 
 sub combine()
 	{
-		for ($y = 0; $y <= 17576; $y++)
+		for ($y = 0; $y <= 2205; $y++)
 			{
 				for (my $a = 0; $a <= 99; $a++) # cycles through numbers
 					{
-						for ($z = 0; $z <= 17576; $z++)
+						for ($z = 0; $z <= 2205; $z++)
 							{
 								$combined_set[$c] = $letter_set[$y] . $number_set[$a] . $letter_set[$z];
 								print $combined_set[$c]."\n";
@@ -59,14 +59,14 @@ sub combine()
 sub letters()
 	{
 		$h = 0;
-		for ($i = 0; $i < 26; $i++)
+		for ($i = 0; $i < 21; $i++) # first letter (consonant)
 			{
-				for ($j = 0; $j < 26; $j++)
+				for ($j = 0; $j < 5; $j++) # second letter (vowel)
 					{
-						for ($k = 0; $k < 26; $k++)
+						for ($k = 0; $k < 21; $k++) # third letter (consonant)
 							{
 								
-								$letter_set[$h] = $var_abc[$i] . $var_abc[$j] . $var_abc[$k];
+								$letter_set[$h] = $var_con[$i] . $var_vow[$j] . $var_con[$k];
 								$h++;
 								
 							}
