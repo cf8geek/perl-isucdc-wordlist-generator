@@ -1,0 +1,1 @@
+# perl-isucdc-wordlist-generator
