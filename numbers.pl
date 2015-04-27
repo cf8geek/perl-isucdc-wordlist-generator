@@ -2,85 +2,14 @@
 
 use warnings;
 use strict;
-our $c = 0; # counter for combined set (full password)
-our $h; # counter for letter set, total
-our $i; # counter for letter set, first letter
-our $j; # counter for letter set, second letter
-our $k; # counter for letter set, third letter
+
 our $x = 0; # counter for number set
-our $y = 0; # counter for beginning letter set
-our $z = 0; # counter for ending letter set
-
-# deprecated...
-# our @var_abc = ('a'..'z');
-our @var_con = ('b','c','d','f','g','h','j','k','l','m','n','p','q','r','s','t','v','w','x','y','z'); # array to hold the consonants
-our @var_vow = ('a','e','i','o','u'); # array to hold the vowels
-our @letter_set; # array to hold the letter sets (consonant, vowel, consonant)
 our @number_set; # array to hold the number set (00..99)
-our @combined_set; # array to hold the combined sets (consonant, vowel, consonant, 00..99, consonant, vowel, consonant)
-
-
-#&letters; # makes the letter sets
 &numbers; # makes the number sets
-
-#&combine; # combines letter sets and number sets in proper format
-
-
-
-sub combine()
-	{
-		for ($y = 0; $y <= 2205; $y++)
-			{
-				for (my $a = 0; $a <= 99; $a++) # cycles through numbers
-					{
-						for ($z = 0; $z <= 2205; $z++)
-							{
-								$combined_set[$c] = $letter_set[$y] . $number_set[$a] . $letter_set[$z];
-								print $combined_set[$c]."\n";
-								$c++;
-							}
-					}
-			}
-	}
-
-
 for (my $a = 0; $a <= 99; $a++) { # cycles through numbers
 	print $number_set[$a]."\n";
 }
-
-
-
-
-
-
-
-
-
-
-
-
-sub letters()
-	{
-		$h = 0;
-		for ($i = 0; $i < 21; $i++) # first letter (consonant)
-			{
-				for ($j = 0; $j < 5; $j++) # second letter (vowel)
-					{
-						for ($k = 0; $k < 21; $k++) # third letter (consonant)
-							{
-								
-								$letter_set[$h] = $var_con[$i] . $var_vow[$j] . $var_con[$k];
-								$h++;
-								
-							}
-					}
-			}
-	}
-
-
-
-sub numbers()
-	{
+sub numbers() {
 		$number_set[$x] = '00';
 		$x++;
 		$number_set[$x] = '01';
@@ -280,5 +209,5 @@ sub numbers()
 		$number_set[$x] = '98';
 		$x++;
 		$number_set[$x] = '99';
-	}
-		
+}
+#EOF
