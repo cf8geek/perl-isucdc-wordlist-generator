@@ -13,6 +13,7 @@ if [ -a ./myrandom-working-directory ]
 mkdir ./myrandom-working-directory
 cd ./myrandom-working-directory
 
+
 # order: echos letters,numbers,numlets,numletnums,bash-runner;
 # then, chmod +x's everything, and runs bash-runner
 # finally, cleans up stuff
